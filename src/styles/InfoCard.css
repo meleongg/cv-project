@@ -1,0 +1,22 @@
+.card {
+    width: 350px;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    row-gap: 20px;
+    background-color: #FFF;
+    padding: 20px;
+}
+
+.card form {
+    display: grid;
+    row-gap: 10px;
+}
+
+.input-pair {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    column-gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
