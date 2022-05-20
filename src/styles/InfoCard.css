@@ -1,5 +1,5 @@
 .card {
-    width: 350px;
+    width: 500px;
     display: grid;
     justify-items: center;
     align-content: center;
@@ -8,14 +8,31 @@
     padding: 20px;
 }
 
+.card-title-w-trash {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.card-title-w-trash i {
+    right: 0;
+    position: absolute;
+}
+
+.card-title-w-trash i:hover {
+    cursor: pointer;
+}
+
 .card form {
+    width: 100%;
     display: grid;
     row-gap: 10px;
 }
 
 .input-pair {
     display: grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 1fr 2fr;
     column-gap: 10px;
     justify-content: center;
     align-items: center;

@@ -19,6 +19,19 @@
     row-gap: 30px;
 }
 
+#inside-container button {
+    background-color: #5689D6;
+    border: none;
+    padding: 10px;
+    width: 30%;
+    color: #FFF;
+    border-radius: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
 }

@@ -92,6 +92,93 @@ class App extends Component {
         },
       ],
     }
+
+    this.addEducation = this.addEducation.bind(this);
+    this.addWex = this.addWex.bind(this);
+  }
+
+  addEducation = (prevEdus) => {
+    const newEdu = {
+      id: uniqid(),
+      institute: {
+        text: "",
+        id: uniqid()
+      },
+      program: {
+        text: "",
+        id: uniqid()
+      },
+      city: {
+        text: "",
+        id: uniqid()
+      },
+      from: {
+        text: "",
+        id: uniqid()
+      },
+      to: {
+        text: "",
+        id: uniqid()
+      },
+      GPA: {
+        text: "",
+        id: uniqid()
+      },
+    }
+
+    this.setState({
+      educations: [...prevEdus, newEdu], 
+    });
+  }
+
+  addWex = (prevWexs) => {
+    const newWex = {
+      id: uniqid(),
+      company: {
+        text: "",
+        id: uniqid()
+      },
+      position: {
+        text: "",
+        id: uniqid()
+      },
+      city: {
+        text: "",
+        id: uniqid()
+      },
+      from: {
+        text: "",
+        id: uniqid()
+      },
+      to: {
+        text: "",
+        id: uniqid()
+      },
+      tasks: {
+        tasks: [
+          { 
+            text: "",
+            id: uniqid()
+          },
+        ], 
+        id: uniqid()},
+    }
+
+    this.setState({
+      educations: [...prevWexs, newWex], 
+    });
+  }
+
+  handleClick = (e) => {
+    if (e.target.id === "add-edu-btn") {
+      const prevEdus = this.state.educations;
+      this.addEducation(prevEdus);
+    }
+
+    if (e.target.id === "add-wex-btn") {
+      const prevWexs = this.state.wexs;
+      this.addWex(prevWexs);
+    }
   }
 
   render() {
@@ -101,21 +188,23 @@ class App extends Component {
     <div id="main-container">
       <Header /> 
       <div id="inside-container">
-        <InfoCard title="General Information" info={generalInfo} />
+        <InfoCard keyVal="gen-info-id" title="General Information" info={generalInfo} />
         {
           educations.map((edu) => {
             let eduCopy = Object.assign({}, edu);
             delete eduCopy["id"];
-            return <InfoCard key={edu.id} title="Education" info={eduCopy} />
+            return <InfoCard keyVal={edu.id} key={edu.id} title="Education" info={eduCopy} />
           })
         }
+        <button onClick={this.handleClick} id="add-edu-btn">Add Education</button>
         {
           wexs.map((wex) => {
             let wexCopy = Object.assign({}, wex);
             delete wexCopy["id"];
-            return <InfoCard key={wex.id} title="Work Experience" info={wexCopy} />
+            return <InfoCard keyVal={wex.id} key={wex.id} title="Work Experience" info={wexCopy} />
           })
         }
+        <button onClick={this.handleClick} id="add-wex-btn">Add Work Experience</button>
       </div>
     </div>
   );
