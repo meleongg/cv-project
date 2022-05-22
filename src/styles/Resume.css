@@ -1,0 +1,45 @@
+#resume {
+    min-height: 791px;
+    height: 100%;
+    width: 612px;
+    background-color: #FFF;
+    font-size: 14px;
+    padding: 30px 20px;
+}
+
+#name {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+#gen-info {
+    display: grid;
+    row-gap: 8px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.resume-heading {
+    font-weight: 700;
+    font-size: 20px;
+    padding: 20px 0;
+}
+
+.company {
+    font-weight: 700;
+}
+
+.education, .wex {
+    display: grid;
+    row-gap: 8px;
+}
+
+.education:not(:last-child), .wex:not(:last-child) {
+    padding-bottom: 20px;
+}
+
+.education-top, .education-btm, .wex-top, .wex-mid, .wex-btm {
+    display: flex; 
+    justify-content: space-between;
+}

@@ -6,7 +6,7 @@ class Header extends Component {
         return (
             <header id="header">
                 <nav>
-                    <h1 id="title">Resume Generator</h1>
+                    <h1 id="title">CV Generator</h1>
                 </nav>
             </header>
         );

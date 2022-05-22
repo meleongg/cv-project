@@ -32,6 +32,10 @@ button:hover {
     cursor: pointer;
 }
 
+#submit-btn {
+    justify-self: center;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
 }

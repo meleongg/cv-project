@@ -4,13 +4,11 @@ class Title extends Component {
     constructor(props) {
         super(props);
 
-        this.handleClick = this.handleClick.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
-    handleClick = (e) => {
-        const card = e.target.parentNode.parentNode;
-        const id = card.id; 
-        console.log(id)
+    handleDelete = (e) => {
+        this.props.detectDelete(e);
     }
 
     render() {
@@ -24,7 +22,7 @@ class Title extends Component {
             return (
                 <div className="card-title-w-trash">
                     <h1 className="card-title">{title}</h1>
-                    <i onClick={this.handleClick} className="fa-solid fa-trash"></i>
+                    <i onClick={this.handleDelete} className="fa-solid fa-trash"></i>
                 </div>
             );
         }
