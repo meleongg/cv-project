@@ -1,7 +1,7 @@
 .card {
     width: 500px;
     display: grid;
-    justify-items: center;
+    justify-items: start;
     align-content: center;
     row-gap: 20px;
     background-color: #FFF;

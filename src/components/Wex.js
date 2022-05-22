@@ -4,6 +4,10 @@ class Wex extends Component {
     render() {
         const {id, company, position, city, from, to, tasks} = this.props;
 
+        const replacedTasks = tasks.text.replace(/\n\r?/g, '\n');
+
+        const replacedTasksArr = replacedTasks.split(/\n/);
+
         return (
             <div key={id} className="wex">
                 <div className="wex-top">
@@ -15,7 +19,13 @@ class Wex extends Component {
                     <h1 className="from-to">{`${from.text + " - " + to.text}`}</h1>
                 </div>
                 <div className="wex-btm">
-                    <h1 className="tasks">{`${tasks.text}`}</h1>
+                    <div className="tasks">
+                        {
+                        replacedTasksArr.map((task) => {
+                            return <li key={task + id} className="task">{task}</li>
+                        })
+                        }
+                    </div>
                 </div>
             </div>
         );

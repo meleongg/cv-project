@@ -40,28 +40,28 @@ class InfoCard extends Component {
                                 return (
                                     <div key={info[key].id} className="input-pair">
                                         <label htmlFor={key}>{key.charAt(0).toUpperCase() + key.substring(1)}</label>
-                                        <input type="email" name={key} placeholder={key.charAt(0).toUpperCase() + key.substring(1) + "..."}></input>
+                                        <input type="email" name={key} placeholder={key.charAt(0).toUpperCase() + key.substring(1) + "..."} defaultValue={info[key].text}></input>
                                     </div>
                                 );
                             } else if (key === "tasks") {
                                 return (
                                     <div key={info[key].id} className="input-pair">
                                         <label htmlFor={key}>{key.charAt(0).toUpperCase() + key.substring(1)}</label>
-                                        <textarea type="textarea" name={key} placeholder="Write a few sentences..." rows="6"></textarea>
+                                        <textarea type="textarea" name={key} placeholder="Press Enter to separate different tasks" rows="6" defaultValue={info[key].text}></textarea>
                                     </div>
                                 );
                             } else if (key === "program") {
                                 return (
                                     <div key={info[key].id} className="input-pair">
                                         <label htmlFor={key}>{key.charAt(0).toUpperCase() + key.substring(1)}</label>
-                                        <input type="text" name={key} placeholder="e.g. Bachelor's Degree in Biology"></input>
+                                        <input type="text" name={key} placeholder="e.g. Bachelor's Degree in Biology" defaultValue={info[key].text}></input>
                                     </div>
                                 );
                             } else {
                                 return (
                                     <div key={info[key].id} className="input-pair">
                                         <label htmlFor={key}>{key.charAt(0).toUpperCase() + key.substring(1)}</label>
-                                        <input type="text" name={key} placeholder={key.charAt(0).toUpperCase() + key.substring(1) + "..."}></input>
+                                        <input type="text" name={key} placeholder={key.charAt(0).toUpperCase() + key.substring(1) + "..."} defaultValue={info[key].text}></input>
                                     </div>
                                 );
                             }

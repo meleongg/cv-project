@@ -43,3 +43,8 @@
     display: flex; 
     justify-content: space-between;
 }
+
+.tasks {
+    display: grid;
+    row-gap: 8px;
+}

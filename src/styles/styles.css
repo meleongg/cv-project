@@ -15,6 +15,7 @@
 
 #inside-container {
     grid-column: 2 / 3;
+    justify-items: center;
     display: grid;
     row-gap: 30px;
 }
@@ -38,4 +39,8 @@ button:hover {
 
 body {
     font-family: 'Roboto', sans-serif;
+}
+
+input:focus {
+    outline: none;
 }

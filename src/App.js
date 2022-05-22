@@ -215,9 +215,14 @@ class App extends Component {
     }
     
     if (e.target.id === "submit-btn") {
-      this.toggleFormVisibility();
+      this.toggleFormVisibility(this.state.showHideForm);
       this.toggleResumeVisibility(this.state.showHideResume);
       this.updateInfo(e);
+    }
+    
+    if (e.target.id === "edit-btn") {
+      this.toggleFormVisibility(this.state.showHideForm);
+      this.toggleResumeVisibility(this.state.showHideResume);
     }
   }
 
@@ -399,9 +404,9 @@ class App extends Component {
     this.updateGenInfo(genInfoForm, prevGenInfo);
   }
 
-  toggleFormVisibility = () => {
+  toggleFormVisibility = (prevShowHideForm) => {
     this.setState({
-      showHideForm: false, 
+      showHideForm: !prevShowHideForm, 
     });
   }
 
@@ -436,11 +441,12 @@ class App extends Component {
           })
         }
         <button onClick={this.handleClick} id="add-wex-btn">Add Work Experience</button>
-        <button onClick={this.handleClick} id="submit-btn">Submit</button>
+        <button onClick={this.handleClick} id="submit-btn">Preview</button>
       </div>
       }
       {showHideResume &&
         <div id="inside-container">  
+          <button onClick={this.handleClick} id="edit-btn">Edit Information</button>
           <Resume genInfo={generalInfo} edus={educations} wexs={wexs} />
         </div>  
       }
