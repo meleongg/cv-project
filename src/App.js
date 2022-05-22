@@ -7,8 +7,6 @@ import Header from "./components/Header";
 import InfoCard from "./components/InfoCard";
 import Resume from "./components/Resume";
 
-import cvIcon from "./images/cv.png";
-
 class App extends Component {
   constructor() {
     super();
@@ -418,15 +416,8 @@ class App extends Component {
     });
   }
 
-  setUpIcon = () => {
-    const icon = document.getElementById("icon");
-    icon.href = cvIcon;
-  }
-
   render() {
     const {generalInfo, educations, wexs, showHideForm, showHideResume} = this.state; 
-
-    this.setUpIcon();
 
     return (
     <div id="main-container">
